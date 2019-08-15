@@ -2,8 +2,8 @@
 
  *    Photo gallery
  *    Variables and functions
- *    Author: 
- *    Date:   
+ *    Author: Evelyn Duarte
+ *    Date: 8/14/19
 
  *    Filename: photos.js
  */
@@ -23,6 +23,11 @@ function rightArrow() {
       }
       populateFigures();
    }
+   if(rightArrow.addEventListener){
+      rightArrow.addEventListener("click", rightArrow, false);
+   }else if (rightArrow.attachEvent){
+      rightArrow.attachEvent("onclick", rightArrow);
+   }
 }
 
 /* shift all images one figure to the right, and change values in photoOrder array to match  */
@@ -35,6 +40,11 @@ function leftArrow() {
       }
       populateFigures();
    }
+   if(leftArrow.addEventListener){
+      leftArrow.addEventListener("click", leftArrow, false);
+   }else if (leftArrow.attachEvent){
+      leftArrow.attachEvent("onclick", leftArrow);
+   }
 }
 
 /* open center figure in separate window */
@@ -46,6 +56,10 @@ function zoomFig() {
 function setUpPage() {
    createEventListeners();
    populateFigures();
+}
+function createEventListeners() {
+var leftArrow = document.getElementById("leftarrow");
+alert(leftArrow);
 }
 
 /* run setUpPage() function when page finishes loading */
